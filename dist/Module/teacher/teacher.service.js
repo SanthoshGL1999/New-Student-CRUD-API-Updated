@@ -23,11 +23,11 @@ let TeacherService = class TeacherService {
         this.teacherRepository = teacherRepository;
         this.studentRepository = studentRepository;
     }
-    async findAll() {
+    findAll() {
         return this.teacherRepository.find();
     }
     findOne(ID) {
-        return this.teacherRepository.findOne({ where: { ID }, relations: ['student'] });
+        return this.teacherRepository.findOneBy({ ID });
     }
     async create(createTeacherDto) {
         const student = await this.studentRepository.findOne({ where: { ID: createTeacherDto.studentID } });

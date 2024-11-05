@@ -32,7 +32,7 @@ __decorate([
     __metadata("design:type", Number)
 ], TEACHERINFO.prototype, "CLASS", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => student_entity_1.STUDENTINFO, (student) => student.teacher),
+    (0, typeorm_1.ManyToMany)(() => student_entity_1.STUDENTINFO, (student) => student.teacher),
     (0, typeorm_1.JoinColumn)({ name: 'studentID' }),
     __metadata("design:type", student_entity_1.STUDENTINFO)
 ], TEACHERINFO.prototype, "student", void 0);

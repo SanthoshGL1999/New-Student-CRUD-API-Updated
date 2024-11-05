@@ -20,7 +20,7 @@ export class StudentService {
     }
 
     findOne(ID: number): Promise<STUDENTINFO> {
-        return this.studentRepository.findOne({ where: { ID },relations:['teacher'] });
+        return this.studentRepository.findOneBy({ID});
     }
 
     create(createStudentDto: CreateStudentDto): Promise<STUDENTINFO> {
@@ -28,7 +28,7 @@ export class StudentService {
     }
 
     async update(ID: number, updateStudentDto:UpdateStudentDto): Promise<void> {
-        await this.studentRepository.update(ID,updateStudentDto); // Check if student exists
+        await this.studentRepository.update(ID,updateStudentDto);
         
     }
 

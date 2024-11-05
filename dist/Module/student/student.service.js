@@ -27,7 +27,7 @@ let StudentService = class StudentService {
         return this.studentRepository.find();
     }
     findOne(ID) {
-        return this.studentRepository.findOne({ where: { ID }, relations: ['teacher'] });
+        return this.studentRepository.findOneBy({ ID });
     }
     create(createStudentDto) {
         return this.studentRepository.save(createStudentDto);

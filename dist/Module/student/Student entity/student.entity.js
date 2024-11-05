@@ -44,7 +44,7 @@ __decorate([
     __metadata("design:type", Number)
 ], STUDENTINFO.prototype, "TEACHER_ID", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => teacher_entity_1.TEACHERINFO, (teacher) => teacher.student),
+    (0, typeorm_1.ManyToMany)(() => teacher_entity_1.TEACHERINFO, (teacher) => teacher.student),
     __metadata("design:type", Array)
 ], STUDENTINFO.prototype, "teacher", void 0);
 exports.STUDENTINFO = STUDENTINFO = __decorate([

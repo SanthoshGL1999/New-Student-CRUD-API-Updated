@@ -24,6 +24,6 @@ export class STUDENTINFO{
     @Column()
     TEACHER_ID:number;
 
-    @OneToMany(()=>TEACHERINFO,(teacher)=>teacher.student)
+    @ManyToMany(()=>TEACHERINFO,(teacher)=>teacher.student)
     teacher: TEACHERINFO[];
 }

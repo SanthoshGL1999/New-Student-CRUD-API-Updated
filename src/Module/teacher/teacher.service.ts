@@ -15,12 +15,12 @@ export class TeacherService {
         private studentRepository: Repository<STUDENTINFO>,
     ) {}
 
-    async findAll(): Promise<TEACHERINFO[]> {
+    findAll(): Promise<TEACHERINFO[]> {
         return this.teacherRepository.find();
     }
 
     findOne(ID: number): Promise<TEACHERINFO> {
-        return this.teacherRepository.findOne({ where: { ID },relations:['student'] });
+        return this.teacherRepository.findOneBy({ ID });
     }
 
     async create(createTeacherDto: CreateTeacherDto): Promise<TEACHERINFO> {

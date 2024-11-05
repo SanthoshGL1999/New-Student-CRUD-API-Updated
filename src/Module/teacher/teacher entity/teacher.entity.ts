@@ -16,7 +16,7 @@ export class TEACHERINFO{
     @Column()
     CLASS: number;
 
-    @ManyToOne(() => STUDENTINFO, (student) => student.teacher)
+    @ManyToMany(() => STUDENTINFO, (student) => student.teacher)
     @JoinColumn({name: 'studentID'})
     student: STUDENTINFO;
 }
